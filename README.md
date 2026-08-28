@@ -1,7 +1,8 @@
 # Candidate Journey App
 
-Grundgeruest fuer die Candidate-Journey-App (siehe `MVP_Scope_CandidateJourneyApp.md`).
-Noch keine echten Screens, nur Projektstruktur, Datenbankschema und Design-Tokens.
+Candidate-Journey-App fuer internationale Pflegefachkraefte (siehe
+`MVP_Scope_CandidateJourneyApp.md`). Alle sechs MVP-Screens sind klickbar,
+aktuell mit Beispieldaten (Mock), noch ohne echte Supabase-Anbindung.
 
 ## Stack
 
@@ -42,8 +43,29 @@ Die App nutzt bewusst dieselbe Palette wie die HPS-Website, keine eigene
 Variante. `tailwind.config.ts` liest ausschliesslich von dort, damit Werte
 nicht doppelt gepflegt werden.
 
+## Screens
+
+Alle sechs Screens aus dem MVP-Scope (Kapitel 3) sind gebaut und ueber die
+Navigation klickbar:
+
+- `/login`: E-Mail-Eingabe, aktuell UI-Mock (kein echter Magic-Link-Versand)
+- `/dashboard`: Begruessung, aktueller Roadmap-Schritt, Schnellzugriff "Ich brauche Hilfe"
+- `/roadmap`: vertikale Timeline P0 bis H/E/I/N/Z, Klick oeffnet Beschreibung
+- `/leben-in-deutschland`: Tabs Wohnen/Behoerden/Alltag, Checkliste, Winter-Hinweis-Banner
+- `/hilfe`: Formular Typ-Auswahl + optionaler Freitext
+- `/profil`: read-only Candidate-Basisdaten
+
+Datenquelle ist aktuell `lib/mock-data.ts` (eine Beispiel-Kandidatin, Maria),
+noch keine echten Supabase-Queries. Die Roadmap-Schritt-Titel sind bewusst
+als "Platzhalter-Schritt" markiert, da die echten HEINZ-Schritte (P0/H/E/I/N/Z)
+laut MVP-Scope Kapitel 8 noch redaktionell fehlen.
+
 ## Was noch fehlt
 
-Screens (Login, Dashboard, Roadmap, Leben in Deutschland, Ich brauche Hilfe,
-Profil), Auth-Logik und RLS-Policies sind bewusst noch nicht gebaut, siehe
-`MVP_Scope_CandidateJourneyApp.md`.
+- Screens an echte Supabase-Queries anbinden (aktuell Mock-Daten)
+- Echte Magic-Link-Auth statt UI-Mock beim Login
+- HelpRequest wirklich speichern + E-Mail-Benachrichtigung ausloesen
+- Echte Roadmap-Inhalte statt Platzhalter-Texte
+- RLS-Policies, sobald Auth steht
+
+Details siehe `MVP_Scope_CandidateJourneyApp.md`.
