@@ -1,5 +1,6 @@
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ButtonLink } from "@/components/ui/Button";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { mockCandidate, mockProgress, mockRoadmapSteps } from "@/lib/mock-data";
 
 export const dynamic = "force-dynamic";
@@ -28,7 +29,7 @@ export default function DashboardPage() {
       <div className="bg-hbo-dunkel text-weiss p-8 md:p-12">
         <Eyebrow onDark>Du stehst hier</Eyebrow>
         <p className="font-headline text-6xl md:text-7xl uppercase mt-2 mb-6">
-          Tag {tageSeitAnkunft}
+          Tag <AnimatedCounter target={tageSeitAnkunft} />
         </p>
         {currentStep && (
           <div>
