@@ -14,7 +14,7 @@ export default function LoginPage() {
     // TODO: echten Magic-Link-Versand ueber Supabase Auth ausloesen, sobald
     // ein Supabase-Projekt verbunden ist. Aktuell nur UI-Mock, leitet direkt
     // weiter.
-    router.push("/dashboard");
+    router.push("/assistent");
   }
 
   return (

@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/dashboard", label: "Start" },
+  { href: "/assistent", label: "Assistent" },
+  { href: "/dashboard", label: "Uebersicht" },
   { href: "/roadmap", label: "Roadmap" },
   { href: "/leben-in-deutschland", label: "Leben in Deutschland" },
   { href: "/hilfe", label: "Ich brauche Hilfe" },
