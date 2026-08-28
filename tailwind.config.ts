@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { colors, typography } from "./lib/design-tokens";
+import { colors, typography, spacing, layout } from "./lib/design-tokens";
 
 const config: Config = {
   content: [
@@ -9,14 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        tuerkis: colors.tuerkis,
-        signalblau: colors.signalblau,
-        signalorange: colors.signalorange,
-        neutral: colors.neutral,
+        hbo: colors.hbo,
+        orange: colors.orange,
+        schwarz: colors.schwarz,
+        charcoal: colors.charcoal,
+        beton: colors.beton,
+        weiss: colors.weiss,
       },
       fontFamily: {
         headline: ["var(--font-headline)", ...typography.headlineFontFamily],
         body: ["var(--font-body)", ...typography.bodyFontFamily],
+      },
+      spacing,
+      maxWidth: {
+        wrap: layout.maxWidth,
       },
       borderRadius: {
         // Editorial statt verspielt: keine abgerundeten Card-Ecken als Default.

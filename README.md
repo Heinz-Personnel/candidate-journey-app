@@ -34,10 +34,13 @@ Passende TypeScript-Typen liegen (handgepflegt) in `lib/database.types.ts`.
 
 ## Design-Tokens
 
-`lib/design-tokens.ts` ist die einzige Quelle fuer Farben und Typografie aus
-Kapitel 1 des Briefings (Tuerkis-Palette, Signal-Blau, Signal-Orange,
-Neutraltoene, Headline-/Body-Fonts). `tailwind.config.ts` liest ausschliesslich
-von dort, damit Werte nicht doppelt gepflegt werden.
+`lib/design-tokens.ts` ist die einzige Quelle fuer Farben, Typografie und
+Abstaende, 1:1 uebernommen aus dem HEINZ. Design Guide (Blau `#1B2B99`/
+`#7C8CFF`/`#D6DBFF`, Orange `#FF5A1F` nur als Akzent, Schwarz/Charcoal/Beton,
+Anton fuer Headlines, Inter fuer Fliesstext/UI, Abstands-Skala 8 bis 128px).
+Die App nutzt bewusst dieselbe Palette wie die HPS-Website, keine eigene
+Variante. `tailwind.config.ts` liest ausschliesslich von dort, damit Werte
+nicht doppelt gepflegt werden.
 
 ## Was noch fehlt
 

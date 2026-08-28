@@ -1,57 +1,65 @@
 /**
- * Zentrale Design-Tokens, abgeleitet aus dem HPS Design-Briefing
- * (MVP_Scope_CandidateJourneyApp.md, Kapitel 1), Fachkraefte-Variante.
+ * Zentrale Design-Tokens, 1:1 uebernommen aus dem HEINZ. Design Guide
+ * (HEINZDesignGuide.html, Stand 28.08.2026), dem aktuellen visuellen
+ * System der HPS-Website (site-new, Blau/Orange/Schwarz). Die App nutzt
+ * bewusst dieselbe Palette wie die Website, keine eigene Variante.
  *
- * Einzige Quelle der Wahrheit fuer Farben/Typografie. tailwind.config.ts
- * liest ausschliesslich von hier, damit Farbwerte nicht doppelt gepflegt
- * werden muessen.
+ * Einzige Quelle der Wahrheit fuer Farben/Typografie/Abstaende.
+ * tailwind.config.ts liest ausschliesslich von hier.
  */
 
 export const colors = {
-  // Leitfarbe fuer Fachkraefte-facing App-Flaechen (nicht Signal-Blau,
-  // das bleibt fuer Struktur-/Markenelemente reserviert, siehe unten).
-  tuerkis: {
-    dunkel: "#0B7A75",
-    basis: "#0FB3A8",
-    hell: "#8CE8DE",
-  },
-  // Uebergeordnete Markenfarbe: Struktur-/Markenelemente (Login, App-Header).
-  signalblau: {
+  hbo: {
+    // --hbo-basis ist im Guide identisch mit --hbo-dunkel.
     dunkel: "#1B2B99",
-    basis: "#3D5AFE",
+    basis: "#1B2B99",
     mittel: "#7C8CFF",
+    hell: "#D6DBFF",
   },
-  // Ausschliesslich fuer Icons/Akzente, nie als Flaechenfarbe oder Headline.
-  signalorange: "#FF7A3D",
-  neutral: {
-    schwarz: "#0B0B0B",
-    charcoal: "#161616",
-    betonOffwhite: "#E7E3DC",
-  },
+  // Einzelner Akzent (z. B. Trennstrich im Hero), niemals als Flaeche.
+  orange: "#FF5A1F",
+  schwarz: "#0B0B0B",
+  charcoal: "#161616",
+  // Seiten-Hintergrund statt reinem Weiss.
+  beton: "#E7E3DC",
+  weiss: "#FFFFFF",
 } as const;
 
 export const typography = {
-  // Screen-Titel: fette, condensed Grossbuchstaben-Grotesk. Sparsam
-  // einsetzen (z. B. "ROADMAP"), nicht fuer Fliesstext oder UI-Labels.
-  headlineFontFamily: ["Archivo Black", "Anton", "sans-serif"],
-  // Fliesstext/UI: klare moderne Grotesk.
-  bodyFontFamily: ["Inter", "Source Sans 3", "sans-serif"],
+  // Headlines/Zahlen: Anton, uppercase.
+  headlineFontFamily: ["Anton", "sans-serif"],
+  // Fliesstext/UI.
+  bodyFontFamily: ["Inter", "-apple-system", "sans-serif"],
 } as const;
 
 /**
- * Kontrast-Pflichtregeln (verbindlich, siehe Kapitel 1):
- * - Niemals Farbe-auf-Farbe aus derselben Familie (nie Blau auf Blau,
- *   nie Tuerkis auf Tuerkis) - Text/Hintergrund immer aus klar
- *   unterschiedlichen Farbfamilien, meist Weiss oder Schwarz auf Farbe.
- * - Buttons brauchen sichtbaren Kontrast zu ihrem Hintergrund: auf
- *   dunklen/farbigen Flaechen eine helle/weisse Button-Variante nutzen,
- *   nie eine aehnliche Farbfamilie.
- *
- * Layout-Prinzipien: editorial statt verspielt (viel Weissraum, klare
- * Bloecke statt Card-UI mit Schatten/Rundungen), grosse nuechterne Zahlen
- * ohne Icon-Dekoration, kleine Versal-Eyebrow-Labels statt bunter Badges,
- * kein Amtsstempel-/Buerokratie-Look.
+ * Abstands-Skala aus dem Guide (Kapitel 3): keine frei erfundenen
+ * Zwischenwerte fuer neue Abschnitte.
  */
-export const designTokens = { colors, typography } as const;
+export const spacing = {
+  "sp-1": "8px",
+  "sp-2": "16px",
+  "sp-3": "24px",
+  "sp-4": "32px",
+  "sp-5": "48px",
+  "sp-6": "64px",
+  "sp-7": "96px",
+  "sp-8": "128px",
+} as const;
+
+export const layout = {
+  maxWidth: "1200px",
+} as const;
+
+/**
+ * Do & Don't (Kapitel 6 des Guides), verbindlich:
+ * - Jede Qualitaetsaussage mit Zahl/Siegel/Prozessschritt belegen.
+ * - Sie-Anrede, ruhiger warmer Ton, korrekte Fachbegriffe.
+ * - Orange nur als einzelner Akzent, nie als Flaeche.
+ * - Ein Button-Grundstil mit klar benannten Varianten.
+ * - Keine Gedankenstriche im Fliesstext, kein Flieder-/Hellblau-Ton in
+ *   Eyebrows oder Fliesstext, kein Eyebrow, der die Headline wiederholt.
+ */
+export const designTokens = { colors, typography, spacing, layout } as const;
 
 export default designTokens;

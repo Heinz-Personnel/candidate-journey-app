@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Inter } from "next/font/google";
+import { Anton, Inter } from "next/font/google";
 import "./globals.css";
 
-const archivoBlack = Archivo_Black({
+const anton = Anton({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-headline",
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${archivoBlack.variable} ${inter.variable}`}>
+    <html lang="de" className={`${anton.variable} ${inter.variable}`}>
       <body>{children}</body>
     </html>
   );

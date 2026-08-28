@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-neutral-betonOffwhite text-neutral-schwarz font-body;
+  @apply bg-beton text-schwarz font-body;
 }
